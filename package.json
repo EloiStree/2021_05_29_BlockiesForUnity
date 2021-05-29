@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.eloistree.ethereumblockies",                              
+  "displayName": "Ehter Funding Loterry Nether and EtherScan API",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "Based on two other git. This git allows to create the blockies of Ehtereum based on user address.",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2021_05_29_BlockiesForUnity.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
