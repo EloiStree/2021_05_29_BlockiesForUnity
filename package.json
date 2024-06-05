@@ -1,7 +1,7 @@
 
 {                                                                                
   "name": "be.eloistree.ethereumblockies",                              
-  "displayName": "Ehter Funding Loterry Nether and EtherScan API",                        
+  "displayName": "Generate Ethereum Blockies",                        
   "version": "0.0.1",                         
   "unity": "2018.1",                             
   "unityRelease": "",                             
@@ -11,7 +11,7 @@
   "relatedPackages":{},     
   "samples" : [],     
   "author" : {
-"name":"",
+"name":"Eloi Stree",
 "mail":"",
 "url":""},     
   "repository":{
