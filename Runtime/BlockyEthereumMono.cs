@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 //This code is an adaptation of this code
@@ -12,13 +13,13 @@ using UnityEngine.UI;
 //Modify by EloiStre for beeing used in Unity
 //I am not at all the creator of this code. I just modified it.
 
-public class BlockyMono : MonoBehaviour
+public class BlockyEthereumMono : MonoBehaviour
 {
     public string m_address;
     public uint m_defaultsize = 8;
     public uint m_defaultWidth = 8;
     public Texture2D m_texture;
-    public RawImage m_imageDebug;
+    public UnityEvent<Texture2D> m_onBlockyChanged;
 
     private void Awake()
     {
@@ -27,9 +28,8 @@ public class BlockyMono : MonoBehaviour
 
     public void SetAddress(string address) {
         m_address = address;
-        m_texture = Blockies.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
-        if(m_imageDebug!=null)
-            m_imageDebug.texture = m_texture;
+        m_texture = BlockiesUtility.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
+        m_onBlockyChanged.Invoke(m_texture);
     }
 
     //private void OnValidate()
@@ -159,7 +159,7 @@ public class Blockies
         }
     }
 
-    private Texture2D CreateEthereumIcon(int scale = 8)
+    public Texture2D CreateEthereumIcon(int scale = 8)
     {
         Texture2D resultImage = new Texture2D(m_sizeOfBlock * scale, m_sizeOfBlock * scale);
         int height = resultImage.height - 1;
@@ -179,6 +179,12 @@ public class Blockies
         return resultImage;
     }
 
+  
+}
+
+
+public class BlockiesUtility
+{
     public static Texture2D GetAsDefaultFor(string address)
     {
         Blockies blockies = new Blockies(address);
@@ -191,4 +197,3 @@ public class Blockies
         return blockies.CreateEthereumIcon((int)scale);
     }
 }
-
