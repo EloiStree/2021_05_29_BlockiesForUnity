@@ -31,6 +31,10 @@ public class BlockyEthereumMono : MonoBehaviour
         m_texture = BlockiesUtility.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
         m_onBlockyChanged.Invoke(m_texture);
     }
+    public Texture2D GetTextureGenerated() {
+
+        return m_texture;
+    }
 
     //private void OnValidate()
     //{
