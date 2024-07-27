@@ -36,13 +36,6 @@ public class BlockyEthereumMono : MonoBehaviour
 
         return m_texture;
     }
-
-    //private void OnValidate()
-    //{
-    //    // m_texture = Blockies.GetAsDefaultFor(m_address);
-    //    m_texture = Blockies.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
-    //}
-
 }
 
 
