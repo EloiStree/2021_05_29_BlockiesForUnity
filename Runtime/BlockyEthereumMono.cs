@@ -28,18 +28,13 @@ public class BlockyEthereumMono : MonoBehaviour
 
     public void SetAddress(string address) {
         m_address = address;
-<<<<<<< HEAD:Runtime/BlockyMono.cs
-        m_texture = Blockies.GetAsDefaultFor(m_address, m_defaultsize, m_defaultScale);
-        if(m_imageDebug!=null)
-            m_imageDebug.texture = m_texture;
-=======
-        m_texture = BlockiesUtility.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
+
+        m_texture = BlockiesUtility.GetAsDefaultFor(m_address, m_defaultsize, m_defaultScale);
         m_onBlockyChanged.Invoke(m_texture);
     }
     public Texture2D GetTextureGenerated() {
 
         return m_texture;
->>>>>>> 8a81e9c693dd457a9a1b82c07ad2b6ff4354f5fd:Runtime/BlockyEthereumMono.cs
     }
 
     //private void OnValidate()
