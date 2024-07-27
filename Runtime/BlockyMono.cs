@@ -16,7 +16,7 @@ public class BlockyMono : MonoBehaviour
 {
     public string m_address;
     public uint m_defaultsize = 8;
-    public uint m_defaultWidth = 8;
+    public uint m_defaultScale = 8;
     public Texture2D m_texture;
     public RawImage m_imageDebug;
 
@@ -27,7 +27,7 @@ public class BlockyMono : MonoBehaviour
 
     public void SetAddress(string address) {
         m_address = address;
-        m_texture = Blockies.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
+        m_texture = Blockies.GetAsDefaultFor(m_address, m_defaultsize, m_defaultScale);
         if(m_imageDebug!=null)
             m_imageDebug.texture = m_texture;
     }
