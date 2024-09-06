@@ -17,7 +17,7 @@ public class BlockyEthereumMono : MonoBehaviour
 {
     public string m_address;
     public uint m_defaultsize = 8;
-    public uint m_defaultWidth = 8;
+    public uint m_defaultScale = 8;
     public Texture2D m_texture;
     public UnityEvent<Texture2D> m_onBlockyChanged;
 
@@ -28,20 +28,14 @@ public class BlockyEthereumMono : MonoBehaviour
 
     public void SetAddress(string address) {
         m_address = address;
-        m_texture = BlockiesUtility.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
+
+        m_texture = BlockiesUtility.GetAsDefaultFor(m_address, m_defaultsize, m_defaultScale);
         m_onBlockyChanged.Invoke(m_texture);
     }
     public Texture2D GetTextureGenerated() {
 
         return m_texture;
     }
-
-    //private void OnValidate()
-    //{
-    //    // m_texture = Blockies.GetAsDefaultFor(m_address);
-    //    m_texture = Blockies.GetAsDefaultFor(m_address, m_defaultsize, m_defaultWidth);
-    //}
-
 }
 
 
